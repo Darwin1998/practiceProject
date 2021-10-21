@@ -21,3 +21,5 @@ Route::prefix('user')->namespace('User')->name('user')->middleware(['web','auth'
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/customers',[App\Http\Controllers\CustomerController::class, 'index'])->name('index');
