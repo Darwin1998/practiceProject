@@ -9,13 +9,53 @@
                     <div class="card " style="width: 1000px">
                         <div class="card text-center">
                             <div class="card-header">
-                              Featured
+                              Customers
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#exampleModalCenter">Add  <span class="bi bi-person-plus"></span></button>
+                                  
+                                </button>
                             </div>
-                            <div class="card-body">
-                              <h5 class="card-title">Special title treatment</h5>
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                
+                                  <th scope="col">#</th>
+                                  <th scope="col">First</th>
+                                  <th scope="col">Last</th>
+                                  <th scope="col">Contact</th>
+                                  <th scope="col">Address</th>
+                                  <th></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                               @forelse ($customers as $customer)
+                                  <tr>
+                                    <td>
+                                      {{$customer->id}}
+                                    </td>
+                                    <td>
+                                        {{$customer->first_name}}
+                                    </td>
+
+                                    <td>
+                                      {{$customer->last_name}}
+                                    </td>
+                                    <td>
+                                      {{$customer->contact_number}}
+                                    </td>
+                                    <td>
+                                      {{$customer->address}}
+                                    </td>
+                                    <td>
+                                      <button class="btn btn-primary">Subcriptions <span class="bi bi-tv"></span></button>
+                                    </td>
+                                  </tr>
+                               @empty
+                                   <p>No Customer to show</p>
+                               @endforelse
+                                
+                              </tbody>
+                            </table>
                             <div class="card-footer text-muted">
                               2 days ago
                             </div>
@@ -24,7 +64,75 @@
                 </div>
             </div>
            
+            <div>
             
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress2">Address 2</label>
+                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <select id="inputState" class="form-control">
+                              <option selected>Choose...</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                              Check me out
+                            </label>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         </main> 
     </div>    
 
