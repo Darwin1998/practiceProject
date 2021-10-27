@@ -10,10 +10,14 @@
                         <div class="card text-center">
                             <div class="card-header">
                               Customers
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#exampleModalCenter">Add  <span class="bi bi-person-plus"></span></button>
+                               
+                               
+                               <a href="/customers/create" class="btn btn-success float-right"><span class="bi bi-person-plus"> Add </span></a>
+                                 <!-- Button trigger modal -->
+                                 <!--<button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#exampleModalCenter">Add  <span class="bi bi-person-plus"></span></button>
                                   
                                 </button>
+                              -->
                             </div>
                             <table class="table table-striped">
                               <thead>
@@ -47,15 +51,20 @@
                                       {{$customer->address}}
                                     </td>
                                     <td>
-                                      <button class="btn btn-primary">Subcriptions <span class="bi bi-tv"></span></button>
+                                      <div class="btn btn-group">
+                                        <a href="/customers/delete/{{$customer->id}}" class="btn btn-danger btn-sm"><span class="bi bi-x-lg"></span></a>
+                                        <a href="/customers/edit/{{$customer->id}}" class="btn btn-warning"><span class="bi bi-pencil-square"></span></a>
+                                      </div>
+                                      
                                     </td>
                                   </tr>
                                @empty
                                    <p>No Customer to show</p>
                                @endforelse
-                                
+                              
                               </tbody>
                             </table>
+                            {{$customers->links('pagination::bootstrap-4')}}
                             <div class="card-footer text-muted">
                               2 days ago
                             </div>
@@ -67,70 +76,50 @@
             <div>
             
 
-              <!-- Modal -->
+              <!-- Modal 
               <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                      <h5 class="modal-title" id="exampleModalCenterTitle">Add New Customer</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                      
+                      <form action="/customer" method="POST">
+                        @csrf
                         <div class="form-row">
                           <div class="form-group col-md-6">
-                            <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            <label for="inputfirstname">First Name</label>
+                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name" autocomplete="off">
                           </div>
-                          <div class="form-group col-md-6">
-                            <label for="inputPassword4">Password</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                          </div>
+                         
                         </div>
                         <div class="form-group">
-                          <label for="inputAddress">Address</label>
-                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                          <label for="inputlastname">Last Name</label>
+                          <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name" autocomplete="off">
                         </div>
                         <div class="form-group">
-                          <label for="inputAddress2">Address 2</label>
-                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                          <label for="inputcontactnumber">Contact Number</label>
+                          <input type="text" class="form-control" name="contact_number" id="contact_number" placeholder="09xxxxxxx" autocomplete="off">
                         </div>
                         <div class="form-row">
                           <div class="form-group col-md-6">
-                            <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity">
+                            <label for="inputaddress">Address</label>
+                            <input type="text" class="form-control"name="address"  id="address" autocomplete="off">
                           </div>
-                          <div class="form-group col-md-4">
-                            <label for="inputState">State</label>
-                            <select id="inputState" class="form-control">
-                              <option selected>Choose...</option>
-                              <option>...</option>
-                            </select>
-                          </div>
-                          <div class="form-group col-md-2">
-                            <label for="inputZip">Zip</label>
-                            <input type="text" class="form-control" id="inputZip">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                              Check me out
-                            </label>
-                          </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                         
+                          <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                       
                       </form>
+                     
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                  
                   </div>
                 </div>
+              -->
               </div>
             </div>
         </main> 

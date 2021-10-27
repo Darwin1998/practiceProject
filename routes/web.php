@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/customers',[App\Http\Controllers\CustomerController::class, 'index'])->name('index');
+Route::get('/customers', 'CustomerController@index')->name('index');
+Route::get('/customers/delete/{customer}','CustomerController@delete')->name('delete');
+Route::get('/customers/edit/{customer}','CustomerController@edit')->name('edit');
+Route::get('/customers/create','CustomerController@create')->name('create');
+
+Route::post('/customer','CustomerController@store')->name('store');
+
