@@ -25,7 +25,7 @@
                         @forelse ($internet_plans as $plan)
                             <tr>
                                 <td>
-                                    {{$plan->internet_plane_id}}
+                                    {{$plan->internet_plan_id}}
                                 </td>
                                 <td>
                                     {{$plan->name}}
@@ -37,8 +37,8 @@
 
                                 <td>
                                     <div class="btn btn-group">
-                                       <a href="/customers/delete/{{$plan->id}}" class="btn btn-danger btn-sm"><span class="bi bi-x-lg"></span></a>
-                                        <a href="/customers/edit/{{$plan->id}}" class="btn btn-warning"><span class="bi bi-pencil-square"></span></a>
+                                       <a href="/internet_plans/delete/{{$plan->internet_plan_id}}" class="btn btn-danger btn-sm"><span class="bi bi-x-lg"></span></a>
+                                        <a href="/internet_plans/edit/{{$plan->internet_plan_id}}" class="btn btn-warning"><span class="bi bi-pencil-square"></span></a>
                                     </div>
 
                                 </td>

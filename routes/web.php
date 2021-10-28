@@ -33,4 +33,4 @@ Route::post('/customer','CustomerController@store')->name('store');
 Route::get('/internet_plans','InternetPlanController@index')->name('index');
 Route::get('/internet_plans/create','InternetPlanController@create')->name('create');
 Route::post('/internet_plan','InternetPlanController@store')->name('store');
-
+Route::get('/internet_plans/delete/{internet_plan}','InternetPlanController@delete')->name('delete');

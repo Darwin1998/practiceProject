@@ -17,6 +17,12 @@ class InternetPlanController extends Controller
         return view('internet_plans.create');
     }
 
+    public function delete(InternetPlan  $internetPlan)
+    {
+        $internetPlan->delete();
+        return redirect('/internet_plans');
+    }
+
     public function store(Request $request)
     {
         $data = $request->validate([
