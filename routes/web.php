@@ -28,6 +28,9 @@ Route::get('/customers/delete/{customer}','CustomerController@delete')->name('de
 Route::get('/customers/edit/{customer}','CustomerController@edit')->name('edit');
 Route::get('/customers/create','CustomerController@create')->name('create');
 Route::patch('/customers/{customer}','CustomerController@update')->name('update');
-
 Route::post('/customer','CustomerController@store')->name('store');
+
+Route::get('/internet_plans','InternetPlanController@index')->name('index');
+Route::get('/internet_plans/create','InternetPlanController@create')->name('create');
+Route::post('/internet_plan','InternetPlanController@store')->name('store');
 
