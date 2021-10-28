@@ -14,7 +14,7 @@ class CreateInternetPlansTable extends Migration
     public function up()
     {
         Schema::create('internet_plans', function (Blueprint $table) {
-            $table->id('internetPlan_id');
+            $table->id('internet_plan_id');
             $table->string('name');
             $table->decimal('price',10,2);
             $table->timestamps();

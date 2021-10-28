@@ -19,7 +19,8 @@ class CreateCustomersTable extends Migration
             $table->string('last_name');
             $table->string('contact_number');
             $table->string('address');
-            $table->integer('internetPlan_id');
+            $table->unsignedBigInteger('internet_plan_id')->nullable();
+
 
 
             $table->timestamps();

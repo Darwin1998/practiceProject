@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div>
-    <div class="card r" style="width:70%; float: none; margin: 0 auto; ">
+    <div class="card" style="width:70%; float: none; margin: 0 auto; ">
         <div class="card-body">
             <div class="card text-center">
                 <div class="card-header">
@@ -17,18 +17,18 @@
                           </div>
                           <div class="form-group col-md-6">
                             <label for="inputlastname">Last Name</label>
-                            <input type="text" class="form-control"name="last_name" id="inputlastname" placeholder="Last Name">
+                            <input type="text" class="form-control" name="last_name" id="inputlastname" placeholder="Last Name">
                           </div>
                           <div class="form-group col-md-6">
                             <label for="inputaddress">Address</label>
-                            <input type="text" class="form-control"name="address" id="inputaddress" placeholder="Address">
+                            <input type="text" class="form-control" name="address" id="inputaddress" placeholder="Address">
                           </div>
                           <div class="form-group col-md-6">
                             <label for="inputcontactnumber">Contact Number</label>
-                            <input type="text" class="form-control"name="contact_number" id="inputcontact" placeholder="Contact #">
+                            <input type="text" class="form-control" name="contact_number" id="inputcontact" placeholder="Contact #">
                           </div>
                         </div>
-                        
+
                         <button type="submit" class="btn btn-primary">Save</button>
                       </form>
                 </div>
@@ -39,8 +39,8 @@
 
         </div>
       </div>
-    
-    
+
+
 </div>
 
 @endsection

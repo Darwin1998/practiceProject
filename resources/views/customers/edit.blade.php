@@ -8,8 +8,9 @@
                   Update Customer
                 </div>
                 <div class="card-body">
-                    <form action="/#" method="POST" autocomplete="off">
+                    <form action="/customers/{{$customer->id}}}" method="post" autocomplete="off">
                         @csrf
+                        @method('PATCH')
                         <div class="form-row">
                           <div class="form-group col-md-6">
                             <label for="inputfirstname">First Name</label>
@@ -28,7 +29,7 @@
                             <input type="text" class="form-control"name="contact_number" id="inputcontact" value="{{$customer->contact_number}}">
                           </div>
                         </div>
-                        
+
                         <button type="submit" class="btn btn-primary">Save</button>
                       </form>
                 </div>
@@ -39,8 +40,8 @@
 
         </div>
       </div>
-    
-    
+
+
 </div>
 
 @endsection
