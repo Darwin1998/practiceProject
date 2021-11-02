@@ -22,6 +22,27 @@ class InternetPlanController extends Controller
         $internetPlan->delete();
         return redirect('/internet_plans');
     }
+    public function edit(InternetPlan  $internetPlan)
+    {
+
+        return view('internet_plans.edit', compact('internetPlan'));
+    }
+
+    public function update(InternetPlan $internetPlan, Request $request)
+    {
+
+
+        $data = $request->validate([
+
+            'name' => 'required',
+        'price' => 'required|numeric'
+
+        ]);
+
+        $internetPlan->update($data);
+
+        return redirect('/internet_plans');
+    }
 
     public function store(Request $request)
     {

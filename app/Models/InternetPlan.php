@@ -9,7 +9,7 @@ class InternetPlan extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable= ['name','price'];
     protected $primaryKey = 'internet_plan_id';
 
     public function customers()

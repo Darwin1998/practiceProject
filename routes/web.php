@@ -34,3 +34,6 @@ Route::get('/internet_plans','InternetPlanController@index')->name('index');
 Route::get('/internet_plans/create','InternetPlanController@create')->name('create');
 Route::post('/internet_plan','InternetPlanController@store')->name('store');
 Route::get('/internet_plans/delete/{internet_plan}','InternetPlanController@delete')->name('delete');
+Route::get('/internet_plans/edit/{internet_plan}','InternetPlanController@edit')->name('edit');
+Route::patch('/internet_plans/{internet_plan}','InternetPlanController@update')->name('update');
+
