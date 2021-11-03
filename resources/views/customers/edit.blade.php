@@ -8,6 +8,7 @@
                   Update Customer
                 </div>
                 <div class="card-body">
+                    @include('helpers.validation')
                     <form action="/customers/{{$customer->id}}}" method="post" autocomplete="off">
                         @csrf
                         @method('PATCH')

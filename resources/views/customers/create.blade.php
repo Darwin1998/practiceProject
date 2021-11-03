@@ -8,6 +8,7 @@
                   New Customer
                 </div>
                 <div class="card-body">
+                    @include('helpers.validation')
                     <form action="/customer" method="POST" autocomplete="off">
                         @csrf
                         <div class="form-row">

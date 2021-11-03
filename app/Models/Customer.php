@@ -8,12 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     use HasFactory;
-    
-    
+
+
     protected $guarded = [];
+
+    protected $primaryKey = 'customer_id';
 
     public function internetPlans()
     {
         return $this->hasMany(InternetPlan::class);
+    }
+
+    public function transaction()
+    {
+        return $this->hasMany(Transaction::class);
     }
 }
